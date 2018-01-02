@@ -1,0 +1,357 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.menu-item {
+  padding: 50px;
+}
+
+li {
+  align-items: center;
+}
+
+/*begin custom*/
+
+:root {
+ --color-primary-text: rgb(170, 34, 0);
+ --color-dark-grey: rgb(88, 88, 88);
+ --color-medium-grey: rgb(149, 149, 149);
+ --color-light-grey: rgb(217, 217, 217);
+ --color-primary-nav-bar: rgb(255, 98, 0);
+ --color-primary-nav-bar-desat: rgb(255, 137, 64);
+ --color-primary-hl: white;
+ --color-menu-bar: rgb(246, 246, 246);
+}
+
+a {
+ text-decoration: none;
+ outline: none;
+}
+
+#primary-menu {
+ background-color: var(--color-primary-nav-bar);
+ padding-top: 9px;
+ padding-bottom: 9px;
+}
+
+#primary-menu li {
+ display: inline;
+}
+
+#primary-menu a {
+ color: var(--color-primary-text);
+}
+
+#primary-menu>ul>li>a+a {
+ padding-left: 4px;
+}
+
+#primary-menu ul>li:not(:first-child) {
+ float: right;
+ padding-left: 12px;
+ padding-right: 0;
+}
+
+#primary-menu ul>li:not(:first-child) a:hover {
+ color: var(--color-primary-hl)
+}
+/*nav menu bar*/
+
+#nav-menu-bar {
+ margin-left: auto;
+}
+/*nav menu bar items*/
+
+#nav-menu-bar>ul>li {
+ display: inline-block;
+}
+
+#nav-menu-bar a {
+ font-weight: 400;
+}
+
+#nav-menu-bar>ul>li {
+ margin-left: 27px;
+}
+
+#nav-menu-bar>ul>li>div>div>a {
+ margin-top: 6px;
+ padding-bottom: 6px;
+ border-bottom-style: solid;
+ border-bottom-width: 4px;
+ border-bottom-color: var(--color-menu-bar);
+}
+
+#nav-menu-bar>ul>li>div>div>a {
+ color: var(--color-dark-grey);
+}
+
+#nav-menu-bar>ul>li>div>div+div>div {
+ position: absolute;
+ transform: translateX(-50%);
+ padding-top: 18px;
+ background-color: none;
+}
+/*locate and style dropdown and sub dropdown items*/
+
+#nav-menu-bar>ul ul li {
+ display: block;
+ position: relative;
+ background-color: white;
+ padding-left: 14px;
+ padding-right: 14px;
+ color: var(--color-medium-grey);
+ padding-bottom: 14px;
+}
+/*menu item spacing*/
+
+#nav-menu-bar>ul ul li div {
+ white-space: pre;
+ display: flex;
+ justify-content: space-between;
+ align-items: center
+}
+
+#nav-menu-bar>ul ul li div span {
+ padding-left: 8px;
+ cursor: pointer;
+}
+/*style all drop down menu ul*/
+
+#nav-menu-bar>ul ul {
+ border-style: solid;
+ border-width: 1px;
+ border-color: var(--color-dark-grey);
+}
+
+
+
+#nav-menu-bar>ul ul li:first-child {
+ padding-top: 20px;
+}
+
+#nav-menu-bar>ul ul li:last-child {
+ padding-bottom: 20px;
+}
+/*position dropdown menu*/
+
+#nav-menu-bar>ul>li>div>div+div>div {
+ display: none;
+ background-color: none;
+}
+
+#nav-menu-bar>ul>li>div {
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
+}
+/*position sub dropdown menus*/
+
+#nav-menu-bar li>ul {
+ position: absolute;
+ display: none;
+ width: -moz-max-content;
+ width: max-content;
+ width: -webkit-max-content;
+ left: 100%;
+ transform: translateY(-37px);
+}
+
+#nav-menu-bar>ul>li:hover>div>div>a {
+ border-bottom-color: var(--color-primary-nav-bar);
+}
+
+#nav-menu-bar>ul>li:hover>div>div+div>div {
+ display: block;
+}
+/*show sub menus*/
+
+#nav-menu-bar ul>li:hover>ul {
+ display: block;
+}
+/*hightlight dropdown and submenu items*/
+
+#nav-menu-bar ul ul li:hover>div>a,
+#nav-menu-bar ul ul li:hover {
+ color: black;
+}
+
+#social-links {
+ position: absolute;
+ bottom: 0;
+}
+
+#social-links li {
+ display: inline;
+ margin-right: 3px;
+}
+
+#social-links img {
+ opacity: 0.25;
+}
+
+#social-links img:hover {
+ opacity: 1.0;
+}
+
+textarea {
+ border-style: solid;
+ border-width: 1px;
+ border-color: var(--color-light-grey);
+ background-color: var(--color-menu-bar);
+ padding: 0;
+}
+
+input {
+ border-style: solid;
+ font-size: 1rem;
+ border-width: 1px;
+ border-color: var(--color-light-grey);
+ background-color: var(--color-menu-bar);
+ line-height: 32px;
+ margin-bottom: 12px;
+ padding-left: 8px;
+}
+
+::placeholder {
+ font-size: 15px;
+
+ vertical-align: middle;
+ /*opacity: 0.75;*/
+}
+
+textarea {
+ box-sizing: border-box;
+ font-size: 1rem;
+ padding-top: 8px;
+ padding-left: 8px;
+}
+
+button {
+ cursor: pointer;
+ outline: none;
+ display: inline-block;
+ border-radius: 0;
+ margin-top: 20px;
+ background-color: var(--color-primary-nav-bar);
+ border: none;
+ color: white;
+ padding: 12px 24px;
+ text-align: center;
+ text-decoration: none;
+ font-size: 12px;
+}
+
+button:hover {
+ background-color: var(--color-primary-nav-bar-desat);
+}
+
+.content1 {
+ color: var(--color-medium-grey);
+ margin-bottom: 55px;
+}
+
+.content2 {
+ color: var(--color-dark-grey);
+}
+
+
+.header1 {
+ border-bottom-style: solid;
+ border-bottom-width: 6px;
+ border-color: var(--color-dark-grey);
+ font-size: 24px;
+ padding-bottom: 8px;
+ color: var(--color-primary-nav-bar);
+ margin-bottom: 19px;
+}
+
+.header2 {
+ font-weight: 600;
+ font-size: 24px;
+ color: var(--color-primary-nav-bar);
+ margin-bottom: 12px;
+}
+
+#crumb {
+ margin-top: 45px;
+ margin-bottom: 45px;
+}
+
+#crumb li,
+a {
+ display: inline-block;
+ text-align: center;
+ color: var(--color-medium-grey);
+}
+
+#crumb a:hover {
+ font-weight: 600;
+ color: var(--color-dark-grey);
+}
+
+#crumb a::after {
+ display: block;
+ content: attr(id);
+ font-weight: 600;
+ height: 0;
+ overflow: hidden;
+ visibility: hidden;
+}
+
+#crumb li:last-child>a {
+ color: var(--color-dark-grey);
+ font-weight: 600;
+}
+
+
+
+html {
+ font-family: 'Roboto', sans-serif;
+}
